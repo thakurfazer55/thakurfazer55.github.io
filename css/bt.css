@@ -1,0 +1,35 @@
+@font-face {
+    font-family: bored;
+    src: url(../fonts/bored.ttf);
+}
+canvas{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	background:url("../pictures/back.png");
+	background-size: cover;
+	background-position: center;
+	
+}
+body{
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	font-family: bored;
+	font-weight: 500;
+	font-size:35px;
+}
+html{
+	height: 100%;
+}
+.navbar-brand{
+	font-size:38px;
+	font-weight: 700;
+}
+img{
+	height: 40px;
+	width: 40px;
+}
+.navbar{
+	height: 65px;
+}

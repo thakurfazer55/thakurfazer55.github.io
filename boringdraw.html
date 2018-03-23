@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Boring Website</title>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bd.css">
+	<script type="text/javascript" src="dist/howler.min.js"></script>
+	<script type="text/javascript" src="dist/paper-full.min.js"></script>
+	<script type="text/paperscript" canvas="mycanvas">
+		var path;
+function onMouseDown(event) {
+	path = new Path();
+	path.strokeColor = 'white';
+	path.add(event.point, event.point);
+}
+
+function onMouseDrag(event) {
+	if(event.modifiers.shift) {
+		// If the shift key is down, change the point of
+		// the last segment to the position of the mouse:
+		path.lastSegment.point = event.point;
+	} else {
+		// If the shift key is not down, add a segment
+		// to the path at the position of the mouse:
+		path.add(event.point);
+	}
+}
+	</script>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #40ca4d">
+  <a class="navbar-brand" href="#"><img src="icon/bored.png"> The Boring Website</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Boring Sounds</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="boringdraw.html">Boring Draw</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="boringcircles.html">Boring Circles</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="boringtouch.html">Boring Touch</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="sbeauty.html">Boring Beauty</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+	<canvas id="mycanvas" resize></canvas>
+</body>
+</html>
